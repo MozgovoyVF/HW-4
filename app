@@ -6,5 +6,6 @@ $app = new \Symfony\Component\Console\Application('demo app');
 
 $app->add(new \App\ReturnStringCommand());
 $app->add(new \App\ShowStringCommand());
+$app->add(new \App\GetPersonalDataCommand());
 
 $app->run();
