@@ -1,0 +1,25 @@
+<?php
+
+namespace App;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Output\OutputInterface;
+
+
+class ReturnStringCommand extends Command
+{
+  protected function configure()
+  {
+    $this->setName('show_string')->setDescription('Show input string')->addArgument('string', InputArgument::REQUIRED, 'String');;
+  }
+
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+
+      $output->writeln('Привет ' . sprintf($input->getArgument('string')));
+
+      return Command::SUCCESS;
+    }
+}
